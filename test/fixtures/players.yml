@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  surname: MyString
+  forename: MyString
+  plays: MyString
+  residence: MyString
+  birthday: 2011-07-17
+  height: 9.99
+  weight: 9.99
+
+two:
+  surname: MyString
+  forename: MyString
+  plays: MyString
+  residence: MyString
+  birthday: 2011-07-17
+  height: 9.99
+  weight: 9.99

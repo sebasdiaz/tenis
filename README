@@ -254,3 +254,17 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+
+  
+JUGADOR
+rails g scaffold player surname:string forename:string plays:string residence:string birthday:date height:decimal weight:decimal
+CATEGORIA
+rails g scaffold level name:string 
+JUGADORCATEGORIA
+rails g scaffold playerlevel player:belongs_to level:belongs_to
+JUGADOREMAIL
+rails g scaffold playeremail name:string email:string player:belongs_to
+JUGADORTELEFONO
+rails g scaffold playerphone name:string phone:string player:belongs_to
+ 
+  

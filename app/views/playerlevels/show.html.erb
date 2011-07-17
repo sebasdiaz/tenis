@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player:</b>
+  <%= @playerlevel.player %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @playerlevel.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_playerlevel_path(@playerlevel) %> |
+<%= link_to 'Back', playerlevels_path %>

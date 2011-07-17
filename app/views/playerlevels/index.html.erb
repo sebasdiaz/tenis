@@ -1,0 +1,25 @@
+<h1>Listing playerlevels</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @playerlevels.each do |playerlevel| %>
+  <tr>
+    <td><%= playerlevel.player %></td>
+    <td><%= playerlevel.level %></td>
+    <td><%= link_to 'Show', playerlevel %></td>
+    <td><%= link_to 'Edit', edit_playerlevel_path(playerlevel) %></td>
+    <td><%= link_to 'Destroy', playerlevel, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Playerlevel', new_playerlevel_path %>
