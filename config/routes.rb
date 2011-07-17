@@ -1,4 +1,8 @@
 Tenis::Application.routes.draw do
+  resources :playerphones
+
+  resources :playeremails
+
   resources :playerlevels
 
   resources :levels
