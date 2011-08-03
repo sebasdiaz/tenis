@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 20110717033332
+#
+# Table name: players
+#
+#  id         :integer         not null, primary key
+#  surname    :string(255)
+#  forename   :string(255)
+#  plays      :string(255)
+#  residence  :string(255)
+#  birthday   :date
+#  height     :decimal(, )
+#  weight     :decimal(, )
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

@@ -1,40 +1,96 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Surname:</b>
+  <b>Nombre:</b>
   <%= @player.surname %>
 </p>
 
 <p>
-  <b>Forename:</b>
+  <b>Apellido:</b>
   <%= @player.forename %>
 </p>
 
 <p>
-  <b>Plays:</b>
+  <b>Juega:</b>
   <%= @player.plays %>
 </p>
 
 <p>
-  <b>Residence:</b>
+  <b>Reside:</b>
   <%= @player.residence %>
 </p>
 
 <p>
-  <b>Birthday:</b>
+  <b>Cumpleaños:</b>
   <%= @player.birthday %>
 </p>
 
 <p>
-  <b>Height:</b>
+  <b>Altura:</b>
   <%= @player.height %>
 </p>
 
 <p>
-  <b>Weight:</b>
+  <b>Peso:</b>
   <%= @player.weight %>
 </p>
 
+<h3>Telefonos</h3>
+<table>
+  <tr>
+    <th>Detalle</th>
+    <th>Numero</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @player.playerphones.each do |playerphone| %>
+  <tr>
+    <td><%= playerphone.name %></td>
+    <td><%= playerphone.phone %></td>
+    <td><%= link_to 'Editar Numero', edit_player_playerphone_path(@player) %></td>
+    <td><%= link_to 'Quitar Telefono', [@player,playerphone], :confirm => 'Quitar telefono?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<p><%= link_to 'Agregar Telefono', new_player_playerphone_path(@player) %></p>
 
+<h3>Correo Electronico</h3>
+<table>
+  <tr>
+    <th>Detalle</th>
+    <th>Direccion</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @player.playeremails.each do |playeremail| %>
+  <tr>
+    <td><%= playeremail.name %></td>
+    <td><%= playeremail.email %></td>
+    <td><%= link_to 'Editar Correo', edit_player_playeremail_path(playeremail) %></td>
+    <td><%= link_to 'Quitar Email', [@player,playeremail], :confirm => 'Quitar correo electronico?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<p><%= link_to 'Agregar Correo Electronico', new_player_playeremail_path(@player) %></p>
+
+<h3>Categorias en las que juega</h3>
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Level</th>
+    <th></th>
+  </tr>
+<% @player.playerlevels.each do |playerlevel| %>
+  <tr>
+    <td><%= playerlevel.level %></td>
+    <td><%= link_to 'Quitar categoria', [@player, playerlevel], :confirm => 'Quitar categoria?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<p><%= link_to 'Agregar Categoria', new_player_playerlevel_path(@player) %></p>
+
+<p>
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
+</p>

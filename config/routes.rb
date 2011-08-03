@@ -1,13 +1,30 @@
 Tenis::Application.routes.draw do
-  resources :playerphones
 
-  resources :playeremails
+  resources :super_tiebreaks
 
-  resources :playerlevels
+  resources :tiebreaks
+
+  resources :games_groups
+
+  resources :games
+
+  resources :clubs
+
+  resources :rounds
+
+  resources :round_types
+
+  resources :tournaments
+
+  resources :tournamenttypes
 
   resources :levels
 
-  resources :players
+  resources :players do
+    resources :playerlevels
+    resources :playeremails
+    resources :playerphones
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

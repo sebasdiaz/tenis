@@ -10,7 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717033332) do
+ActiveRecord::Schema.define(:version => 20110802215534) do
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "location"
+    t.string   "district"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", :force => true do |t|
+    t.integer  "round_id"
+    t.integer  "club_id"
+    t.date     "day"
+    t.time     "hour"
+    t.integer  "player_1_id"
+    t.integer  "player_2_id"
+    t.integer  "winner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games_groups", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.integer  "games"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "levels", :force => true do |t|
     t.string   "name"
@@ -49,6 +79,49 @@ ActiveRecord::Schema.define(:version => 20110717033332) do
     t.date     "birthday"
     t.decimal  "height"
     t.decimal  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "round_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rounds", :force => true do |t|
+    t.string   "name"
+    t.integer  "tournament_id"
+    t.integer  "round_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "super_tiebreaks", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiebreaks", :force => true do |t|
+    t.integer  "games_group_id"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tournaments", :force => true do |t|
+    t.string   "name"
+    t.integer  "level_id"
+    t.integer  "tournamenttype_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tournamenttypes", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
