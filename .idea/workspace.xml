@@ -92,7 +92,7 @@
       <file leaf-file-name="player.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="25" selection-start="369" selection-end="369" vertical-scroll-proportion="0.7429306">
+            <state line="20" column="32" selection-start="453" selection-end="453" vertical-scroll-proportion="0.874036">
               <folding />
             </state>
           </provider>
@@ -525,7 +525,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="369" selection-end="369" vertical-scroll-proportion="0.7429306">
+        <state line="20" column="32" selection-start="453" selection-end="453" vertical-scroll-proportion="0.874036">
           <folding />
         </state>
       </provider>
